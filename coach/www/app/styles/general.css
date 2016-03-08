@@ -1,0 +1,126 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+button {
+    border: none;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, Lucida Grande, Tahoma, sans-serif !important;
+    font-size: 15px;
+}
+
+
+html,body{ 
+    height:100%;
+    min-height: 100%;
+}
+
+#NGVIEW {
+    height: 100%;
+    min-height: 100%;
+}
+
+.inlineBlock {
+    display: inline-block;
+}
+
+.displayBlock {
+    display: block;
+}
+
+.displayNone {
+    display: none;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.cursorPointer {
+    cursor: pointer;
+}
+
+.paddingTop20px {
+    padding-top: 20px !important;
+}
+
+.paddingLeft15px {
+    margin-left: 15px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.floatLeft {
+    float: left;
+}
+
+.floatRight {
+    float: right;
+}
+
+/*
+ * header
+ **/
+.header {
+    padding: 15px;
+    color: white;
+}
+.header i {
+    opacity: 1;
+}
+
+/*
+ * color
+ **/
+.standardGreen {
+    background-color: #39bfa2 !important;
+}
+
+.clickGreen {
+    background-color: #029171 !important;
+}
+
+.borderClickGreen {
+    border-color: #029171 !important;
+}
+
+.white {
+    color: #FFFFFF !important;
+}
+
+.green {
+    color: #39bfa2 !important;
+}
+
+.yellow {
+    color: #e28e03 !important;
+}
+
+.grey {
+    color: #d6d6d6 !important;
+}
+
+.pane {
+    height: 0px;
+}
+
+/*
+ *表单验证提示框
+ **/
+.form-alert {
+  background-color: red;
+  color: white;
+  padding: 0 15px;
+  margin-top: 20px;
+}
+
+.form-alert p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}

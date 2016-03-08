@@ -1,0 +1,175 @@
+/*
+author : weapon;
+time: 2015.3.5;
+email : 2385367768@qq.com;
+*/
+#homepage {
+    width:100%;
+    height: 100%;
+    position: relative;
+}
+
+.welcomPic  {
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+}
+
+.welcomPic img {
+    width: 100%;
+    height: 100%;
+}
+
+#guideBody {
+    width: 100%;
+    min-width: 320px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#guidePics {
+    width: 100%;
+    height: 100%;
+    font-size: 0px;
+    position: relative;
+    left: 0;
+}
+
+#guidePics img {
+    width: 100%;
+    height: 100%;
+}
+
+#guidePics img:first-child {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#guidePics img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 100%;
+}
+
+#guidePics img:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 200%;
+}
+
+#guidePics img:nth-child(4) {
+    position: absolute;
+    top: 0;
+    left: 300%;
+}
+
+#guidePics button {
+    text-align: center;
+    display: block;
+    position: absolute;
+    top: 67%;
+    left: 350%;
+    width: 196px;
+    color: #ffffff;
+    font-size: 17px;
+    background-color: #39BFA2;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 1em;
+    border: none;
+    border-radius: 2px;
+    margin-left: -98px;
+    font-family: "微软雅黑";
+    letter-spacing: 2px;
+}
+
+.metadata {
+    color: #d6d6d6;
+    float:right;
+}
+
+.author{
+    color: #E28E03;
+}
+
+.doctor {
+    color: #39BFA2;
+}
+
+.time {
+    color: #d6d6d6;
+}
+
+.text {
+    color: #999999;
+}
+
+.note {
+    color: #565656;
+}
+
+.fluidImg {
+    width:100%;
+    height:120px;
+}
+
+#background {
+    position: relative;
+    margin-top: 19%;
+    width: 73%;
+}
+
+.homepageLinks {
+    position: absolute;
+    width: 32%;
+}
+
+.homepageImgs {
+    width: 100%;
+}
+
+#b0 {
+    width: 60%;
+    top: 23%;
+    left: 0;
+}
+
+#b1 {
+    left: 24%;
+    top: 8%;
+}
+
+#b2 {
+    left: 52%;
+    top: 24%;
+}
+
+#b3 {
+    left: 63%;
+    top: 48%;
+}
+
+#b4 {
+    left: 52%;
+    top: 72%;
+}
+
+#b5 {
+    left: 23%;
+    top: 90%;
+}
+
+.topBar {
+    background: #39bfa2;
+    padding : 3%;
+}
+
+.topBar i {
+    font-size: 1.5em;
+    height: 1em;
+}
+
+.topBar .button-clear {
+    color: white;
+}

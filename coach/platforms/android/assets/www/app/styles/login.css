@@ -1,0 +1,137 @@
+div#login_body {
+    background-image:  url(../static/image/login_background.png);
+    background-size: 100%;
+    min-width: 320px;
+    min-height: 100%;
+}
+
+div#login_body h2 {
+    padding-top: 33px;
+    font-size: 19px;
+    text-shadow: 0px 0px 9px #000000;
+ }
+
+div#login_body section {
+    width: 231px;
+    margin: 0 auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+div#login_body img.circular.ui.image {
+    margin: 27px auto 18.5px auto;
+}
+
+div#login_body p {
+    font-size: 15px;
+    color: #565656;
+    margin-bottom: 33.5px;
+}
+
+div#login_body form div {
+    border: 1px solid #e1e1e1;
+    border-radius: 60px;
+    -moz-border-radius: 60px; /* Old Firefox */
+    padding: 12.5px;
+    width: 205px;
+    text-align: left;
+}
+
+div#login_body form input {
+    height: 17px;
+    width: 130px;
+    vertical-align: baseline;
+    border: none;
+    font-size: 14px;
+    background-color: transparent;
+}
+
+div#login_body form input:focus {
+    outline: none;
+}
+
+div#login_body form div:nth-child(2) {
+    margin-top: 17px;
+    margin-bottom: 72px;
+}
+
+div#login_body form img {
+    margin-bottom: -1.4px;
+    margin-right: 5px;
+}
+
+div#login_body form div:nth-child(2) img {
+    margin-left: 2px;
+}
+
+div#login_body form div label {
+    font-size: 14px;
+    color: #e1e1e1;
+}
+
+div#login_body form button {
+    border-radius: 60px;
+    -moz-border-radius: 60px; /* Old Firefox */
+    padding: 12.5px;
+    width: 205px;
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 20px;
+    box-sizing: content-box;
+}
+
+div#login_body form a {
+    font-size: 14px;
+    color: #eac136;
+    display: block;
+}
+
+#changePwdBody {
+    min-height: 100%;
+    min-width: 320px;
+    background-color: #F1F1F1;
+}
+
+.changePwdDiv {
+    height: 50px;
+    background-color: white;
+    font-size: 14px;
+    color: #565656;
+    border-bottom: 1px solid #e1e1e1;
+    line-height: 1em;
+}
+
+.changePwdDiv span {
+    display: inline-block;
+    padding-left: 28px;
+    width: 5em;
+    padding-top: 15.5px;
+    padding-bottom: 15.5px;
+}
+
+.changePwdDiv input {
+    width: 17em;
+    padding-top: 15.5px;
+    padding-bottom: 15.5px;
+    border: none;
+}
+
+.changePwdDiv input:focus {
+    outline: none;
+}
+
+#changePwd div:last-child {
+    margin-left: auto;
+    margin-right: auto;
+    width: 292px;
+    text-align: center;
+    background-color: #39bfa2;
+    color: white;
+    font-size: 15px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+}
+
+#changePwd section {
+    margin-bottom: -90px;
+}

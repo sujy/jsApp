@@ -1,0 +1,60 @@
+<!--
+/*
+ * AUTHOR:       chenjiajian
+ * EMAIL:        798095202@qq.com
+ * CREATE TIME:  2015.2.6
+ **/
+-->
+
+<div id="dateTimeChooseBody">
+    <div ng-show="!detailVisible">
+        <div class="top_bar">
+            <a ng-click="historyBack()"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+            <span>我的预约</span>
+        </div>
+
+        <div ng-repeat="item in myFree" class="dateTimeChooseItems">
+            <p>{{item.date}}</p>
+            <p><span>{{item.weekday}}</span><span>{{item.time}}</span></p>
+            <div class="dateTimeChooseActive" ng-show="item.count < item.max" ng-click="showDateDetail(item.date, item.weekday, item.time)">可预约</div>
+            <div class="dateTimeChooseNegative" ng-show="item.count == item.max">预约已满</div>
+        </div>
+    </div>
+
+    <div ng-show="detailVisible">
+        <div class="top_bar">
+            <a ng-click="detailVisible=false"><img src="app/static/image/top_arrow.png" width="16px" height="16px" /></a>
+            <span>我的预约</span>
+        </div>
+
+        <form name="detailForm">
+            <div class="dateTimeChooseDetailFormItem">
+                <div class="inlineBlock">
+                    <img src="app/static/image/clinicNews_clock.png" /><br />
+                    <span>用户账号</span>
+                </div>
+                <div>
+                    <input type="text" name="userphone" ng-model="userID" placeholder="请输入预约用户手机" />
+                </div>
+            </div>
+            <div class="dateTimeChooseDetailFormItem">
+                <div class="inlineBlock">
+                    <img src="app/static/image/clinicNews_clock.png" /><br />
+                    <span>预约时间</span>
+                </div>
+                <div>
+                    <span>{{dateDetail.date}}  {{dateDetail.weekday}}</span>
+                    <br />
+                    <span>{{dateDetail.time}}</span>
+                </div>
+            </div>
+
+            <section class="form-alert" id="detailFormAlert" style="display: none;"></section>
+
+            <div id="dateTimeChooseSubmit" ng-click="submitBooking()">
+                保存预约信息
+            </div>
+        </form>
+    </div>
+
+</div>

@@ -1,0 +1,38 @@
+<!--
+/*
+ * AUTHOR:       chenjiajian
+ * EMAIL:        798095202@qq.com
+ * CREATE TIME:  2015.2.5
+ **/
+-->
+<div id="clinicNews">
+    <div ng-show="showNewsList">
+        <div class="top_bar">
+            <a ng-click="historyBack()"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+            <span>诊所公告</span>
+        </div>
+
+        <div ng-repeat="item in news" class="clinicNewsList">
+            <p>{{item.title}}</p>
+            <p><img src="app/static/image/clinicNews_clock.png" width="11px" height="11px"/>{{item.date}}</p>
+            <img class="arrows" src="app/static/image/clinicNews_arrow.png"  ng-click="checkNewDetail($index)" />
+        </div>
+    </div>
+
+    <div ng-show="!showNewsList" id="clinicNewsDetailBox">
+        <div class="top_bar">
+            <a ng-click="showNewsList=true"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+            <span>公告详情</span>
+        </div>
+
+        <div id="clinicNewsDetail">
+            <h3>{{new.title}}</h3>
+            <p><img src="app/static/image/clinicNews_clock.png" width="11px" height="11px"/>{{new.date}}</p>
+            <p><img src="app/static/image/clinicNews_clinic.png" width="11px" height="11px"/>{{clinicName}}</p>
+        </div>
+
+        <article>
+            <p>{{new.content}}</p>
+        </article>
+    </div>
+</div>

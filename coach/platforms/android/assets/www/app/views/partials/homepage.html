@@ -1,0 +1,43 @@
+<!--
+/*
+ * AUTHOR:       chenjiajian
+ * EMAIL:        798095202@qq.com
+ * CREATE TIME:  2015.2.3
+ **/
+-->
+<div id="homepage_body">
+
+    <div class="homepage_title">
+        <image ng-src="{{info.photo}}" width="75px" height="75px" class="circular ui image" />
+        <p>Welcome, Doctor {{info.name}}</p>
+    </div>
+
+    <div class="ui two column page grid">
+        <div class="column">
+            <div class="row">
+                <a onclick="window.clearInterval(homepageChatPolling);" ui-sref="clinicInfo"><image ng-src="app/static/image/homepage_msgboard.png" width="77px" height="77px" /></a>
+                <span>留言板</span>
+            </div>
+            <div class="row">
+                <a onclick="window.clearInterval(homepageChatPolling);" ui-sref="dateList"><image ng-src="app/static/image/homepage_booking.png" width="77px" height="77px" /></a>
+                <span>我的预约</span>
+            </div>
+            <div class="row">
+                <a onclick="window.clearInterval(homepageChatPolling);" ui-sref="clinicNews"><image ng-src="app/static/image/homepage_news.png" width="77px" height="77px" /></a>
+                <span>诊所公告</span>
+            </div>
+        </div>
+        <div class="column">
+            <div class="row">
+                <a onclick="window.clearInterval(homepageChatPolling);" ui-sref="chatList"><image ng-src="app/static/image/homepage_chat.png" width="77px" height="77px" /></a>
+                <span>我的消息</span>
+            </div>
+            <img id="homepage_count" ng-src="app/static/image/chatList_red.png" width="9px" height="9px"  ng-show="count!=0">
+            <div class="row">
+                <a onclick="window.clearInterval(homepageChatPolling);" ui-sref="userInfo"><image ng-src="app/static/image/homepage_info.png" width="77px" height="77px" /></a>
+                <span>我的资料</span>
+            </div>
+        </div>
+    </div>
+
+</div>

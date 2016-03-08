@@ -1,0 +1,322 @@
+#userInfo {
+    height: 100%;
+    min-width: 320px;
+    position: relative;
+    background-color: #F1F1F1;
+}
+
+#userInfoBody section {
+    background-color: #FFFFFF;
+}
+
+#userInfoBody section:first-child {
+    background-image: url(../static/image/userInfo_background.png);
+    background-size: 100%;
+    text-align: center;
+    color: #ffffff;
+    font-size: 17px;
+    text-shadow: 0px 0px 10px #000000;
+    height: 147.5px;
+}
+
+#userInfoBody #userInfo_title div {
+    position: relative;
+    top: 12px;
+    width: 96px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#userInfoBody #userInfo_title p {
+    position: relative;
+    top: 20px;
+}
+
+#userInfoBody #userInfo_title div img:first-child {
+    border: 3px solid #ffffff;
+    box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.15);
+}
+
+#userInfoBody #userInfo_title div img:nth-child(2) {
+    position: absolute;
+    top: 60px;
+    right: -5px;
+    padding: 5px;
+}
+
+#userInfoBody #userInfo_title div img:last-child {
+    position: absolute;
+    top: 60px;
+    right: -5px;
+    padding: 5px;
+}
+
+#infoDetailSection div {
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+    height: 15.5px;
+    padding: 17.5px 0px 17.5px 0px;
+    font-size: 15px;
+    color: #d6d6d6;
+    text-align: center;
+}
+
+#infoDetailSection span:first-child {
+    position: absolute;
+    top: 17.5px;
+    left: 14px;
+    font-size: 15px;
+    color: #565656;
+}
+
+#infoDetailSection div img {
+    position: absolute;
+    top: 2px;
+    right: 0px;
+    padding: 15px 27px;
+    vertical-align: middle;
+    float: right;
+}
+
+#infoDetailSection input {
+    background-color: transparent;
+    margin-left: auto;
+    margin-right: auto;
+    height: 17px;
+    width: 190px;
+    vertical-align: baseline;
+    border: none;
+    font-size: 15px;
+    color: #000000;
+}
+
+#infoDetailSection input.activeInput {
+    text-align: center;
+    height: 17px;
+    width: 190px;
+    vertical-align: baseline;
+    border: none;
+    font-size: 15px;
+    color: #d6d6d6 !important;
+}
+
+#infoDetailSection input:focus {
+    outline: none;
+}
+
+#infoGoAhead {
+    margin-top: 13px;
+}
+
+#infoGoAhead div {
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+    padding: 17.5px 0px 17.5px 14px;
+    font-size: 15px;
+    color: #565656;
+}
+
+#infoGoAhead a {
+    position: absolute;
+    top: 17px;
+    right: 32px;
+}
+
+#userInfo_note {
+    min-height: 100%;
+    min-width: 320px;
+    background-color: #F1F1F1;
+    position: relative;
+}
+
+#userInfo_note article {
+    margin: 20px 14px 0 14px;
+}
+
+#userInfo_note article textarea {
+    display: block;
+    background-color: #ffffff;
+    font-size: 14px;
+    color: #565656;
+    width: 292px;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 13.5px 13.5px 0 13.5px;
+    border: 1.5px solid #39bfa2;
+}
+
+#userInfo_note #submitNote {
+    background-color: #39bfa2;
+    font-size: 16px;
+    color: #ffffff;
+    width: 292px;
+    margin: 0 auto 0 auto;
+    padding-top: 8.5px;
+    padding-bottom: 8.5px;
+    text-align: center;
+}
+
+#chooseSex {
+    padding-top: 9.5px;
+    padding-bottom: 9.5px;
+    background-color: #39bfa2;
+}
+
+#chooseSex div {
+    text-align: center;
+    color: #39bfa2;
+    width: 141px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+    font-size: 14px;
+    background-color: #ffffff;
+}
+
+#chooseSex div img {
+    vertical-align: middle;
+    margin-left: -20px;
+}
+
+#chooseSex div:last-child {
+    color: #ffbc4c;
+}
+
+#chooseSex div:first-child {
+    margin-bottom: 14px;
+}
+
+#userInfo_logoutButton {
+    width: 292px;
+    font-size: 16px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 14px;
+    background-color: #f54964;
+    text-align: center;
+    left: 50%;
+    margin-left: -146px;
+    padding-top: 8.5px;
+    padding-bottom: 8.5px;
+}
+
+@media (max-height: 460px) { 
+  #userInfo_logoutButton {
+    display: none;
+  }
+}
+
+#chooseLogo {
+    height: 113.5px;
+    background-color: #f5f5f5;
+}
+
+#chooseLogo form {
+    z-index: 0;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#chooseLogo input {
+    display: block;
+    width: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 16px;
+}
+
+#chooseLogo input:focus {
+    outline: none;
+}
+
+#chooseLogo div {
+    position: relative;
+    width: 150px;
+    margin: 15.5px auto 0;
+    padding-top: 6.5px;
+    padding-bottom: 7.5px;
+    background-color: #39bfa2;
+    color: #ffffff;
+    text-align: center;
+    z-index: 100;
+}
+
+#chooseLogo div span {
+    z-index: 100;
+    font-size: 16px;
+    line-height: 1em;
+}
+
+#chooseLogo input:nth-child(2) {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    margin-left: -75px;
+    z-index: 1000;
+    opacity: 0;
+    width: 150px;
+    height: 30px;
+}
+
+#chooseLogo input[type="button"] {
+    margin-top: 20px;
+    background-color: #ffffff;
+    border: 1px solid #39bfa2;
+    color: #39bfa2;
+    padding-top: 5.5px;
+    padding-bottom: 5.5px;
+}
+
+.editFieldSlideUpBefore {
+    transition: height 0.1s ease-in;
+    height: 0;
+    width: 100%;
+    min-width: 320px;
+    background-color: #E9E9E9;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.editFieldSlideUp {
+    transition: height 0.2s ease-in;
+    height: 100%;
+}
+
+#userInfoEditFieldInputs {
+    margin-top: 10px;
+    background-color: #ffffff;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+#userInfoEditFieldInputs input {
+    border: none;
+    width: 100%;
+    padding: 10px 0;
+    border-bottom: 1px solid #39bfa2;
+}
+
+#userInfoEditFieldInputs input:focus {
+    outline: none;
+}
+
+.returnPic {
+    background: #39bfa2;
+    font-size: 15px;
+    width: 100%;
+}
+
+.returnPic img {
+    padding: 10px 10px 14px 10px;
+    vertical-align: middle;
+}
+
+.returnPic span {
+    padding: 10px 15px 12px 0px;
+    display: inline-block;
+    color : white;
+}

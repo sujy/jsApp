@@ -1,0 +1,32 @@
+
+<div id="dateListBody">
+    <div class="top_bar">
+        <a ui-sref="homepage"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+        <span>我的预约</span>
+        <img ng-init="dataListModiflyAble==false" ng-show="!dataListModiflyAble" class="dateListModifly" src="app/static/image/dateList_modifly.png" ng-click="dataListModiflyAble=true" width="20px" height="20px"/>
+        <img ng-show="dataListModiflyAble" class="dateListModifly" src="app/static/image/dateList_finish.png" ng-click="dataListModiflyAble=false" width="20.5px" height="14px"/>
+    </div>
+
+    <div ng-repeat="item in bookings" class="dateListItem">
+        <img class="dateListLogo" ng-src="{{item.userPhoto}}" width="60px" height="60px" />
+        <p>{{item.userName}}</p>
+        <p>
+            <img src="app/static/image/clinicNews_clock.png" width="11px" height="11px"/>
+            <span>{{item.bookingDay}}</span>
+            <span>{{item.bookingIW}}</span>
+        </p>
+        <p>{{item.bookingTime}}</p>
+        <a ng-show="hide" ng-href="/#/dateDetail/{{item.bookingTime}}/{{item.userID}}"><img class="dateListArrow" src="app/static/image/clinicNews_arrow.png" /></a>
+        <img ng-show="dataListModiflyAble" class="dateListRubbish" src="app/static/image/dateList_rubbish.png" ng-click="removeDate($index)" width="36px" height="36px"/>
+    </div>
+
+    <div class="dateListButtons">
+        <div class="dateListButton" ui-sref="dateTimeChoose">
+            <a>添加就诊预约</a>
+        </div>
+
+        <div class="dateListButton" ui-sref="dateTimeAble">
+            <a>设置可预约时间</a>
+        </div>
+    </div>
+</div>

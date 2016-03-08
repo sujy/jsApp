@@ -1,0 +1,11 @@
+.top_bar {
+    background-color: #39bfa2 !important;
+    font-size: 15px;
+    color: #ffffff;
+}
+
+.top_bar a {
+    vertical-align: middle;
+    padding: 13px 15px 13px 14px;
+	display: inline-block;
+ }

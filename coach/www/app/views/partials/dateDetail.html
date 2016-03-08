@@ -1,0 +1,28 @@
+
+<div>
+    <a ng-href="/#/dateList" class="ui button">返回</a>
+    <span>我的预约</span>
+</div>
+
+<div class="ui divider"></div>
+
+<form>
+    <h4 class="ui black block header">
+        预约患者
+    </h4>
+    <span>用户</span>
+    <div class="ui input">
+        <input type="text" ng-model="userName" disabled="disabled">
+    </div>
+
+    <h4 class="ui black block header">
+        预约时间
+    </h4>
+    <span>{{bookingDay}} {{bookingTime}}</span>
+
+    <br />
+
+    <button class="ui button" ng-click="submitDetail()">
+        保存预约信息
+    </button>
+</form>

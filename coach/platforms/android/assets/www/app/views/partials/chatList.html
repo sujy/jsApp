@@ -1,0 +1,25 @@
+<!--
+/*
+ * AUTHOR:       chenjiajian
+ * EMAIL:        798095202@qq.com
+ * CREATE TIME:  2015.2.9
+ **/
+-->
+
+
+<div id="chatList">
+    <div class="top_bar">
+        <a ui-sref="homepage"><img src="app/static/image/top_arrow.png" width="16px" height="16px"  onclick="window.clearInterval(chatListPolling);"/></a>
+        <span>我的消息</span>
+    </div>
+
+    <a class="chatListItem" ng-repeat="msg in message" class="displayBlock" onclick="window.clearInterval(chatListPolling);" ui-sref="chatRoom({fromUserID: msg.info.uuid, fromUserName: msg.info.name})">
+        <div>
+            <img ng-src="{{msg.info.photo}}" width="45px" height="45px">
+            <img ng-src="app/static/image/chatList_red.png" width="9px" height="9px" ng-show="msg.hasNewMsg=='true'">
+        </div>
+        <p>{{msg.info.name}}</p>
+        <p>{{msg.lastMsg.dialogMessage}}</p>
+        <span>{{msg.lastMsg.dialogTime}}</span>
+    </a>
+</div>

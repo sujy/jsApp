@@ -1,0 +1,30 @@
+
+<div id="doctorInfoBody">
+    <div>
+        <div class="top_bar">
+            <a ui-sref="clinicInfo"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+            <span>{{doctor.name}}</span>
+        </div>
+    </div>
+
+    <section id="doctorInfoLogo">
+        <img ng-src = "{{doctor.photo}}" height="90px" width="69.5px">
+        <div>
+            {{doctor.name}}
+            <div class="ui large rating active">
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+                <i class="icon"></i>
+            </div>
+        </div>
+        <p>{{doctor.note}}</p>
+    </section>
+
+    <section id="doctorInfoTable">
+        <p>医生坐诊表</p>
+        <img ng-src="{{doctor.table}}" width="291.5px" height="179.5px">
+    </section>
+
+</div>

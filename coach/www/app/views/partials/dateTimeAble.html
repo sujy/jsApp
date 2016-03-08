@@ -1,0 +1,56 @@
+
+<div id="dateTimeAbleBody">
+    <div class="top_bar">
+        <a ui-sref="dateList"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+        <span>我的排期</span>
+    </div>
+
+    <div id="dateForm">
+        <ul class="dateCol firstCol">
+            <li class="inlineBlock dateFirstCol"></li>
+            <li class="inlineBlock" ng-repeat="item in week"><span>{{item}}</span></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">上午<br />09-10</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='9:00-10:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">上午<br />10-11</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='10:00-11:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">上午<br />11-12</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='11:00-12:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">中午<br />12-13</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='12:00-13:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">中午<br />13-14</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='13:00-14:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">下午<br />14-15</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='14:00-15:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">下午<br />15-16</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='15:00-16:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+        <ul class="dateCol">
+            <li class="inlineBlock dateFirstCol">下午<br />16-17</li>
+            <li class="inlineBlock paddingTop20px" ng-repeat="day in week" ng-click="selected.time='16:00-17:00';selected.weekday=day;setting($index);"></li>
+        </ul>
+    </div>
+
+    <!-- <a id="dateTimeAbleButton" ui-sref="dateTimeChange">修改预约时间表</a> -->
+</div>
+
+<div class="displayNone dateTimeSetting modal">
+    <p>可预约时间： <span>{{selected.weekday}} {{selected.time}}</span></p>
+    <p>可预约人数</p>
+    <select ng-model="selected.number" ng-options="item.num as item.num for item in numList">
+    </select>
+    <div ng-click="submitNewBookingTime()">更改</div>
+</div>

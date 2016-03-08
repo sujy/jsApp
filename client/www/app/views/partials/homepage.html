@@ -1,0 +1,60 @@
+
+
+<!--欢迎页-->
+<div ng-init="setEndView()" ng-show="!view" class="welcomPic">
+    <img ng-src="app/static/image/start.jpg">
+</div>
+
+<!--引导页-->
+<div id="guideBody" ng-show="view&&!endGuide">
+    <div id="guidePics">
+        <img id="g1" ng-src="app/static/image/guide_1.jpg">
+        <img id="g2" ng-src="app/static/image/guide_2.jpg">
+        <img id="g3" ng-src="app/static/image/guide_3.jpg">
+        <img id="g4" ng-src="app/static/image/guide_4.jpg">
+        <button ng-click="setEndGuide()">立即进入</button>
+    </div>
+</div>
+
+<!--首页-->
+<div ng-show="view&&endGuide">
+    <!-- <div class="bar bar-header item-input-inset topBar">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios7-search placeholder-icon"></i>
+        <input type="search" placeholder="搜索科室、医生、疾病">
+      </label>
+      <button class="button button-clear">
+        搜索
+      </button>
+    </div> -->
+    <div id="homepage">
+
+        <img id="background" ng-src="app/static/image/background0.png">
+
+        <a id="b1" class="textdecorateNone homepageLinks" ui-sref="clinicList">
+            <img ng-src="app/static/image/button0_1.png" class="homepageImgs" />
+        </a>
+
+        <a id="b0" class="textdecorateNone homepageLinks" ng-click="goHealthManage()">
+            <img ng-src="app/static/image/button0_0.png" class="homepageImgs" />
+        </a>
+        
+        <a id="b2" class="textdecorateNone homepageLinks" ui-sref="doctorList">
+            <img ng-src="app/static/image/button0_2.png" class="homepageImgs" />
+        </a>
+
+        <a id="b4" class="textdecorateNone homepageLinks" ui-sref="userMenu">
+            <img ng-src="app/static/image/button0_4.png" class="homepageImgs" />
+        </a>
+
+        <a id="b3" class="textdecorateNone homepageLinks" ui-sref="healthInfo">
+            <img ng-src="app/static/image/button0_3.png" class="homepageImgs" />
+        </a>
+
+        <a id="b5" class="textdecorateNone homepageLinks" ui-sref="contactUs">
+            <img ng-src="app/static/image/button0_6.png" class="homepageImgs" />
+        </a>
+
+    </div>
+
+</div>

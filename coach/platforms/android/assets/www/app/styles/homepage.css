@@ -1,0 +1,56 @@
+#homepage_body {
+    background-image:  url(../static/image/login_background.png);
+    background-size: 100%;
+    text-align: center;
+    min-width: 320px;
+    min-height: 100%;
+}
+
+#homepage_body .homepage_title {
+    padding-top: 29px;
+}
+
+#homepage_body .homepage_title img {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+#homepage_body .homepage_title p {
+    font-size: 15px;
+    margin-bottom: 29px;
+}
+
+#homepage_body .ui.two.column.page.grid {
+    width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 0px;
+    padding-right: 0px;
+    box-sizing: content-box;
+}
+
+#homepage_body .row {
+    text-align: center;
+}
+
+#homepage_body .column {
+    margin-top: 0px;
+    position: relative;
+}
+
+#homepage_body span {
+    display: block;
+    font-size: 14px;
+    color: #e1e1e1;
+    margin-top: 7px;
+    margin-bottom: 18px;
+}
+
+#homepage_count {
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  top: 6.5px;
+  right: 52px;
+}

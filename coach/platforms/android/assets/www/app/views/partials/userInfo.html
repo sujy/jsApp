@@ -1,0 +1,126 @@
+<!--
+/*
+ * AUTHOR:       chenjiajian
+ * EMAIL:        798095202@qq.com
+ * CREATE TIME:  2015.2.3
+ **/
+-->
+<div ng-show="!showNote" id="userInfo">
+    <div class="top_bar">
+        <a ui-sref='homepage'><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+        <span>我的资料</span>
+    </div>
+
+    <div id="userInfoBody">
+        <section>
+            <div id="userInfo_title">
+                <div>
+                    <img ng-src="{{info.photo}}" width="90px" height="90px" class="circular ui image"  ng-click="showLogoChoose()"/>
+                    <img ng-src="app/static/image/userInfo_man.png" ng-show="info.gender == '男'" ng-click="showSexChoose()" width="30px" height="30px"/>
+                    <img ng-src="app/static/image/userInfo_lady.png" ng-show="info.gender == '女'" ng-click="showSexChoose()" width="30px" height="30px"/>
+                </div>
+                <p>
+                    <span ng-show="!showNameInput">{{info.name}}</span>
+                </p>
+            </div>
+        </section>
+
+        <section id="infoDetailSection">
+
+            <div ng-click="edit();editingTitle='修改手机';">
+                <span>手机</span>
+                {{info.phone}}
+                <img ng-src="app/static/image/userInfo_greenPen.png" width="18px" height="18px"/>
+            </div>
+
+            <div ng-click="edit();editingTitle='修改邮箱';">
+                <span>邮箱</span>
+                {{info.email}}
+                <img ng-src="app/static/image/userInfo_greenPen.png" width="18px" height="18px"/>
+            </div>
+
+        </section>
+
+        <section id="infoGoAhead">
+            <div ng-click="showNote=true">
+                <span>我的简历</span>
+                <a><img ng-src="app/static/image/clinicNews_arrow.png" width="10px" height="14px" /></a>
+            </div>
+            <div ui-sref="changePassword">
+                <span>修改密码</span>
+                <a><img ng-src="app/static/image/clinicNews_arrow.png" width="10px" height="14px" /></a>
+            </div>
+        </section>
+    </div>
+
+    <div id="userInfo_logoutButton" ng-click="logout()">
+        <span>退出登陆</span>
+    </div>
+</div>
+
+<div ng-show="showNote" id="userInfo_note">
+    <div class="top_bar">
+        <a ng-click="showNote=false"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+        <span>我的简历</span>
+    </div>
+
+    <article>
+        <div class="ui form">
+            <div class="field">
+                <textarea ng-model="info.note" maxlength="250"></textarea>
+            </div>
+        </div>
+    </article>
+
+
+    <div id="submitNote" ng-click="save()">
+        <span>提交修改</span>
+    </div>
+</div>
+
+<div id="chooseLogo" class="displayNone userInfo_logo modal">
+    <form enctype="multipart/form-data" >
+        <div>
+            <span>选择图片</span>
+        </div>
+        <input id="tempinput" name="image" type="file" />
+        <input type="button" value="上传" ng-click="uploadLogo()"/>
+    </form>
+</div>
+
+<div id="chooseSex" class="displayNone userInfo_sex modal">
+    <div ng-click="info.gender='男';save();">
+        <img src="app/static/image/userInfo_man.png" width="20px" height="20px"/>
+        <span>男性</span>
+    </div>
+    <div ng-click="info.gender='女';save();">
+        <img src="app/static/image/userInfo_lady.png" width="20px" height="20px"/>
+        <span>女性</span>
+    </div>
+</div>
+
+<div id="userInfoEditField" class="editFieldSlideUpBefore">
+
+     <div class="returnPic textAlignCenter">
+         <span class="floatLeft paddingLeft15px" ng-click="endEdit()">取消</span>
+
+         <span>{{editingTitle}}</span>
+
+         <span class="floatRight paddingLeft15px" ng-click="save(1);">保存</span>
+    </div>
+
+    <div id="userInfoEditFieldInputs">
+        <form name="userInfoBaseForm">
+            <input type="text" name="userphone" ng-show="editingTitle=='修改手机'" ng-model="prePhone" autocomplete="off"/>
+            <input type="text" name="useremail" ng-show="editingTitle=='修改邮箱'" ng-model="preEmail" autocomplete="off"/>
+        </form>
+    </div>
+    
+    <section class="form-alert"></section>
+
+<!--     <div id="userInfoEditFieldInputs">
+    <input type="text" ng-show="editingTitle=='修改手机'" ng-model="info.phone" maxlength="11"/>
+    <input type="text" ng-show="editingTitle=='修改邮箱'" ng-model="info.email" maxlength="30"/>
+</div> -->
+
+</div>

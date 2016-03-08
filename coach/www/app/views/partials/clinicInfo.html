@@ -1,0 +1,233 @@
+
+<div>
+    <div class="top_bar">
+        <a ui-sref="homepage"><img src="app/static/image/top_arrow.png" width="16px" height="16px"/></a>
+        <span>{{clinicInfo.name}}</span>
+    </div>
+</div>
+
+<div id="clinicInfoBody">
+
+    <nav class="{{currentPage}}">
+        <ul>
+            <li id="clinic" ng-click='currentPage="clinic";showRoomList=false;'>诊所详情</li>
+            <li id="room" ng-init="showRoomList=false" ng-click='showRoomList=!showRoomList;'>
+                科室详情
+                <img src="app/static/image/clinicInfoRoom_down.png" ng-show="!showRoomList" width="11px" height="6px"/>
+                <img src="app/static/image/clinicInfoRoom_up.png" ng-show="showRoomList" width="11px" height="6px"/>
+                <div id="clinicInfoRoomList" ng-show="showRoomList">
+                    <div ng-repeat="office in clinicInfo.department" class="roomItem" ng-click="findOffice(office)">
+                        {{office}}
+                    </div>
+                </div>
+            </li>
+            <li id="board" ng-click='currentPage="board";showRoomList=false;'>评价建议</li>
+        </ul>
+    </nav>
+
+    <div id="clinicPage" ng-show="currentPage=='clinic'">
+        <section class="clinicImgs">
+            <img ng-src="{{clinicInfo.photo[0]}}" width="94px" height="70px" />
+            <img ng-src="{{clinicInfo.photo[1]}}" width="94px" height="70px" />
+            <img ng-src="{{clinicInfo.photo[2]}}" width="94px" height="70px" />
+        </section>
+
+        <section class="clinicIntroduction">
+            <p>
+                诊所简介
+            </p>
+            <div ng-click="showClinicIntroduction=!showClinicIntroduction">
+                <span  ng-show="showClinicIntroduction">收起</span>
+                <span  ng-show="!showClinicIntroduction">展开</span>
+            </div>
+            <p ng-init="showClinicIntroduction=true" ng-show="showClinicIntroduction">
+                {{clinicInfo.introduction}}
+            </p>
+        </section>
+
+        <section class="clinicDetail">
+            <p>
+                最新公告
+            </p>
+            <div>
+                <a ui-sref="clinicNews"><img src="app/static/image/clinicNews_arrow.png"/></a>
+            </div>
+            <p>
+                {{announcement.title}}
+            </p>
+        </section>
+
+        <section class="clinicDetail">
+            <p>
+                诊所地址
+            </p>
+            <div>
+                <img src="app/static/image/clinicNews_clinic.png" width="20px" height="20px"/>
+            </div>
+            <p>
+                {{clinicInfo.address}}
+            </p>
+        </section>
+
+        <section class="clinicDetail">
+            <p>
+                诊所电话
+            </p>
+            <div>
+                <img src="app/static/image/clinicInfo_phone.png" width="20px" height="20px"/>
+            </div>
+            <p>
+                {{clinicInfo.phone}}
+            </p>
+        </section>
+
+        <section id="clinicMark">
+            <p>
+                诊所评分
+            </p>
+            <div>
+                <span>服务态度</span>
+                <div class="ui large rating active">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
+                <br />
+                <span>医疗效果</span>
+                <div class="ui large rating active">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
+                <br />
+                <span>收费合理性</span>
+                <div class="ui large rating active">
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                    <i class="icon"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="roomPage" ng-show="currentPage=='room'">
+        <section class="clinicImgs">
+            <img ng-src="{{dep.photo[0]}}" width="94px" height="70px" />
+            <img ng-src="{{dep.photo[1]}}" width="94px" height="70px" />
+            <img ng-src="{{dep.photo[2]}}" width="94px" height="70px" />
+        </section>
+
+        <section class="clinicIntroduction">
+            <p>
+                {{dep.name}}简介
+            </p>
+            <div ng-click="showDepIntroduction=!showDepIntroduction">
+                <span  ng-show="showDepIntroduction">收起</span>
+                <span  ng-show="!showDepIntroduction">展开</span>
+            </div>
+            <p ng-init="showDepIntroduction=false" id="depIntroductionP" ng-class="{'depIntroductionPActive': showDepIntroduction}">
+                {{dep.introduction}}
+            </p>
+        </section>
+
+
+        <section class="clinicDetail">
+            <p>
+                医生列表
+            </p>
+            <a ng-repeat="doctor_ in doctors" class="clinicInfo_doctorsName" ui-sref="clinicDoctor({officeName: dep.name, doctorId: doctor_.uuid})">
+                {{doctor_.name}}
+                <img src="app/static/image/clinicInfo_doctors.png" width="13px" height="16px"/>
+            </a>
+        </section>
+
+
+        <section class="clinicDetail">
+            <p>
+                科室坐诊表
+            </p>
+            <img id="clinicInfo_roomTimeTable" ng-src="dep.timeTable[0]" width="291.5px" height="179.5px"/>
+        </section>
+
+    </div>
+
+    <div id="boardPage" ng-show="currentPage=='board'">
+
+        <div id="boardMenu">
+            <div ng-click="showComplaint=false" ng-class="{'active': !showComplaint}">留言板</div>
+            <div ng-click="showComplaint=true" ng-class="{'active': showComplaint}">投诉</div>
+        </div>
+
+        <div class="clinicComments" ng-show="!showComplaint">
+            <div class="clinicComment" ng-repeat="message in msgboard" ng-click="message.reply?showReply=!showReply:showReply=false">
+                <img ng-src="{{message.msg.patientPhoto}}" ng-show="message.reply" width="34px" height="34px" />
+                <img ng-src="{{message.msg.doctorPhoto}}" ng-hide="message.reply"  width="34px" height="34px" />
+                <div class="content">
+                    <a class="author green">{{message.msg.doctorName}}</a>
+                    <span ng-show="message.msg.isReply" class="grey"> 回复 </span>
+                    <a class="author yellow">{{message.msg.patientName}}</a>
+                    
+                    <div class="text">
+                        {{message.msg.messageNote}}
+                    </div>
+
+                    <div class="metadata">
+                        <span class="date grey">{{message.msg.date}}</span>
+                    </div>
+
+                    <div>
+                        <form class="ui reply form" ng-show="showReply" name="replyPatientForm" ng-click="stop()">
+                            <div class="field">
+                                <textarea ng-model="replyPatient" required maxlength="100"></textarea>
+                            </div>
+                            <button class="ui fluid button teal submit labeled icon" ng-click="submitMsg(replyPatientForm.$valid, message.msg.userID, replyPatient)">
+                                <i class="icon edit"></i> 回复
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="boardLength" ng-show="msgboard.length!=null&&!showComplaint">{{msgboard.length}}</div>
+
+        <div class="clinicComments" ng-show="showComplaint">
+            <div class="clinicComment" ng-repeat="cpl in complaint" ng-click="cpl.reply?showReply=!showReply:showReply=false">
+                <img ng-src="{{cpl.msg.patientPhoto}}" ng-show="cpl.reply" width="34px" height="34px" />
+                <img ng-src="{{cpl.msg.doctorPhoto}}" ng-hide="cpl.reply"  width="34px" height="34px" />
+                <div class="content">
+                    <a class="author green">{{cpl.msg.doctorName}}</a>
+                    <span ng-show="cpl.msg.isReply" class="grey"> 回复 </span>
+                    <a class="author yellow">{{cpl.msg.patientName}}</a>
+
+                    <div class="text">
+                        {{cpl.msg.messageNote}}
+                    </div>
+
+                    <div class="metadata">
+                        <span class="date grey">{{cpl.msg.date}}</span>
+                    </div>
+
+                    <div>
+                        <form class="ui reply form" ng-show="showReply" name="replyPatientForm"  ng-click="stop()">
+                            <div class="field">
+                                <textarea ng-model="replyPatient" required maxlength="100"></textarea>
+                            </div>
+                            <button class="ui fluid button teal submit labeled icon" ng-click="submitComplaint(replyPatientForm.$valid, cpl.msg.userID, replyPatient)">
+                                <i class="icon edit"></i> 回复
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="boardLength" ng-show="complaint.length!=null&&showComplaint">{{complaint.length}}</div>
+
+    </div>
+
+</div>

@@ -1,0 +1,47 @@
+div#doctorInfoBody {
+    min-width: 320px;
+    min-height: 100%;
+    background-color: #f1f1f1;
+}
+
+section#doctorInfoLogo {
+    padding: 14px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+section#doctorInfoLogo img {
+    float: left;
+    margin-right: 11px;
+}
+
+section#doctorInfoLogo div {
+    font-size: 17px;
+    color: #565656;
+    font-weight: bold;
+    margin-bottom: 5.5px;
+    margin-right: 10px;
+}
+
+section#doctorInfoLogo p {
+    font-size: 15px;
+    color: #999999;
+    line-height: 1.7em;
+}
+
+section#doctorInfoTable {
+    padding: 14px;
+}
+
+section#doctorInfoTable p {
+    padding-left: 10.5px;
+    border-left: 6px solid #39bfa2;
+    font-size: 17px;
+    color: #565656;
+}
+
+section#doctorInfoTable img {
+    width: 291.5px;
+    margin-top: 13px;
+    margin-left: auto;
+    margin-right: auto;
+}

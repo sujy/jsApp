@@ -1,0 +1,31 @@
+<!--
+/*
+ * AUTHOR:       chenjiajian
+ * EMAIL:        798095202@qq.com
+ * CREATE TIME:  2015.2.3
+ **/
+-->
+<div id="login_body">
+    <section>
+        <h2 class="white">国健医疗科技</h2>
+        <image src="app/static/image/login_logo.png" width="69px" height="69px" class="circular ui image" />
+        <p>Welcome, Doctor</p>
+
+        <form name="loginForm">
+            <div>
+                <image src="app/static/image/login_name.png" width="16px" height="14px"/>
+                <label>账号：</label>
+                <input type="text" ng-model="user.name" required autofocus="autofocus" maxlength="20"/>
+            </div>
+
+            <div>
+                <image src="app/static/image/login_pwd.png" width="16px" height="14px"/>
+                <label> 密码：</label>
+                <input type="password" ng-model="user.password" required maxlength="20">
+            </div>
+
+            <button class="ui submit button standardGreen" ng-click="submit(loginForm.$valid)">登陆</button>
+        </form>
+
+    </section>
+</div>

@@ -1,0 +1,29 @@
+
+<div>
+    <div>
+        <a ng-href="/#/clinicInfo" class="ui button">返回</a>
+        <p>科室详情</p>
+    </div>
+
+    <div class="ui divider"></div>
+
+    <div>
+        <img ng-repeat="item in dep.photo" ng-src="{{item}}" width="100px" height="100px">
+        <h4>诊所信息</h4>
+        <p>{{dep.introduce}}</p>
+        <div class = "ui raised segment">
+            <div class = "ui ribbon label">医生列表</div>
+            <p>
+                <div class="ui divided selection list" ng-repeat="doctor in doctors">
+                    <a class="item" ng-href="/#/clinicInfo/clinicOffice/{{officeName}}/clinicDoctor/{{doctor.uuid}}">
+                        <div class="ui blue horizontal label">{{doctor.name}}</div>
+                    </a>
+                </div>
+            </p>
+            <div class = "ui ribbon label">医生坐诊表</div>
+            <p>
+                <img ng-src="{{dep.timeTable}}" style="height:400px; width:400px;">
+            </p>
+        </div>
+    </div>
+</div>

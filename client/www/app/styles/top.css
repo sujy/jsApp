@@ -1,0 +1,26 @@
+.pane {
+	height: 0px;
+}
+
+.returnPic {
+    background: #39bfa2;
+    font-size: 15px;
+    width: 100%;
+}
+
+.returnPic img {
+	padding: 10px 10px 14px 10px;
+	vertical-align: middle;
+}
+
+.returnPic span {
+    padding: 10px 15px 12px 0px;
+	display: inline-block;
+	color : #ffffff;
+}
+
+.top_bar_favorite {
+	position: relative;
+	float: right;
+    padding: 14px 10px 0px 0px !important;
+}

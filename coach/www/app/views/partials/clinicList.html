@@ -1,0 +1,67 @@
+
+<!--使用clinicControllers中的clinicListCtrl控制器-->
+<div ng-controller="clinicControllers.clinicListCtrl">
+    <div>
+        <a ng-href="/#/" class="ui button">返回</a>
+        <p>查找诊所</p>
+    </div>
+    <div class="ui divider"></div>
+    <div>
+        <div class = "ui action input">
+            <!--查找的诊所名绑定在clinicName，点击查询会调用响应函数find-->
+            <input type="text" ng-model="name">
+            <div class="ui button" ng-click="find(0)">查询</div>
+        </div>
+        <div>
+            <!--选择省份，绑定在selectProvince-->
+            <div class="ui selection dropdown" ng-click="dropInit()">
+                <div class="text">请选择</div>
+                <i class="dropdown icon"></i>
+                <div class="menu">
+                    <div class = "item" ng-repeat="province in provinces">
+                        <div ng-click="selectProvince(province)">{{province.name}}</div>
+                    </div>
+                </div>
+            </div>
+            <!--选择城市，绑定在selectCity-->
+            <div class = "ui selection dropdown" ng-click = "dropInit()">
+                <div class = "text">请选择</div>
+                <i class = "dropdown icon"></i>
+                <div class = "menu">
+                    <div class = "item" ng-repeat="city in prov.sub">
+                        <div ng-click="selectCity(city)">{{city.name}}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!--post当前位置、对应省份、城市，获取离我较近的clinic-->
+            <button class="ui button" ng-click="find(1)">离我最近</button>
+            <!--post对应省份、城市，获取评分较高的clinic-->
+            <button class="ui button" ng-click="find(2)">评分最高</button>
+        </div>
+    </div>
+    <hr>
+    <div>
+        <div ng-repeat="clinic in clinics">
+            <div class = "ui floating message">
+                <!--诊所的第一张图片作为头像!嗯，头像- -。 -->
+                <img ng-src="{{clinic.image}}" style="height:100px; width:100px;">
+                <!--诊所的名字-->
+                <p>{{clinic.name}}</p>
+                <!--诊所的评分-->
+                <div class = "ui rating active" ng-init="ratingInit(clinic.rating, $index)">
+                    <i class = "icon"></i>
+                    <i class = "icon"></i>
+                    <i class = "icon"></i>
+                    <i class = "icon"></i>
+                    <i class = "icon"></i>
+                </div>
+                <br>
+                <a ng-href="/#/clinicInfo/:{{clinic.ID}}" style="text-decoration: none;">
+                    <i class = "huge black triangle right icon"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
